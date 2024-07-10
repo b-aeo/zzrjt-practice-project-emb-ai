@@ -21,7 +21,7 @@ def sent_analyzer():
     '''
     text_to_analyse = request.args.get('textToAnalyze')
     analysis = sentiment_analyzer(text_to_analyse)
-    return analysis
+    return str(f"The AI has determined the text sentiment is {analysis['label'].split('_')[1]} with a score of {analysis['score']} with a score of 1 being the most positive and -1 the most negative")
 
 
 @app.route("/")
